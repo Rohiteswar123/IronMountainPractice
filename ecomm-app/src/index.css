@@ -1,0 +1,162 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* THEMES */
+.light {
+  background-color: #f9fafb;
+  color: #111827;
+  min-height: 100vh;
+}
+
+.dark {
+  background-color: #111827;
+  color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #2563eb;
+  padding: 14px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  margin-left: auto;
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+nav button:hover {
+  background: #e0e7ff;
+}
+
+/* PAGE CONTAINER */
+.page {
+  padding: 30px;
+}
+
+/* HEADINGS */
+h2 {
+  margin-bottom: 16px;
+}
+
+/* CATEGORY LINKS */
+.categories {
+  margin-bottom: 20px;
+}
+
+.categories a {
+  background: #e0e7ff;
+  color: #1e40af;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.categories a:hover {
+  background: #c7d2fe;
+}
+
+/* SEARCH */
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* PRODUCT GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* PRODUCT CARD */
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.dark .card {
+  background: #1f2933;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h4 {
+  margin-bottom: 12px;
+}
+
+.card button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #1d4ed8;
+}
+
+/* WISHLIST */
+.wishlist-item {
+  background: #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.dark .wishlist-item {
+  background: #374151;
+}
+
+.wishlist-item button {
+  margin-left: 10px;
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
