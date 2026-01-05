@@ -1,14 +1,27 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import productsData from "../data/products";
 import ProductCard from "../components/ProductCard";
 
 function Shop() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setProducts(productsData);
+    async function fetchProducts() {
+      try {
+        const response = await fetch("http://localhost:5000/api/products");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
+        setProducts(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    }
+
+    fetchProducts();
   }, []);
 
   const filteredProducts = useMemo(() => {
@@ -33,6 +46,8 @@ function Shop() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       <div className="products">
         {filteredProducts.map((product) => (
